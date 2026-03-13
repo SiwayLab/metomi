@@ -1,0 +1,69 @@
+# ═══════════════════════════════════════════════════════
+#  Metomi .gitignore — 极严格模式
+# ═══════════════════════════════════════════════════════
+
+# ── Python 缓存 ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# ── 虚拟环境 ──
+venv/
+.venv/
+env/
+.env
+*.env
+
+# ── IDE / 编辑器 ──
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── 前端依赖与构建产物 ──
+node_modules/
+dist/
+.nuxt/
+.output/
+*.local
+
+# ── SQLite 数据库及运行日志 ──
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+
+# ── 敏感数据 ──
+cookies.txt
+
+# ── 用户真实数据目录（保留空文件夹结构） ──
+data/db/*
+!data/db/.gitkeep
+
+data/pool/*
+!data/pool/.gitkeep
+
+data/staging/*
+!data/staging/.gitkeep
+
+data/covers/*
+!data/covers/.gitkeep
+
+# ── 测试与覆盖率 ──
+.pytest_cache/
+htmlcov/
+.coverage
+*.cover
+
+# ── 日志 ──
+*.log
+
+# ── 杂项 ──
+*.egg-info/
+build/
+*.whl
+.gemini/

@@ -1,0 +1,16 @@
+# Metomi - Docker Compose Configuration
+# unified Single-Port Deployment
+version: "3.9"
+
+services:
+  metomi:
+    image: siwaylab/metomi:latest
+    container_name: metomi
+    ports:
+      - "8000:8000"   # Unified API and static frontend port
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+    environment:
+      # Optional: Override the settings if needed
+      - DATABASE_URL=sqlite+aiosqlite:////app/data/db/metomi.db

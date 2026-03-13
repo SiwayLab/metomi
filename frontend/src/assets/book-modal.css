@@ -1,0 +1,72 @@
+/* Glassmorphism overrides for el-dialog */
+.book-glass-modal {
+  border-radius: 20px !important;
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(28px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1), 0 0 0 1px inset rgba(255,255,255,0.4) !important;
+  padding: 0 !important; /* Remove default padding */
+  overflow: visible;
+  position: relative;
+  
+  /* Important: Prevent vertical over-stretching */
+  margin-top: 5vh !important;
+  margin-bottom: 5vh !important;
+  max-height: 90vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.book-glass-modal .el-dialog__header {
+  display: none !important; /* completely hide default header */
+}
+
+.book-glass-modal .el-dialog__body {
+  padding: 32px 40px !important;
+  overflow-y: auto !important; /* Ensure internal scrolling if content is too long */
+  flex: 1;
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.book-glass-modal .el-dialog__body::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
+}
+
+/* Input overrides inside the modal */
+.book-glass-modal .el-input__wrapper,
+.book-glass-modal .el-textarea__inner,
+.book-glass-modal .el-select .el-input__wrapper {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+  border-radius: 10px !important;
+  transition: all 0.25s ease;
+}
+
+/* Ensure el-select wrapper itself has matching border-radius */
+.book-glass-modal .el-select__wrapper {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+  border-radius: 10px !important;
+  transition: all 0.25s ease;
+}
+
+.book-glass-modal .el-input__wrapper:hover,
+.book-glass-modal .el-textarea__inner:hover,
+.book-glass-modal .el-select .el-input__wrapper:hover,
+.book-glass-modal .el-select__wrapper:hover {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.book-glass-modal .el-input__wrapper.is-focus,
+.book-glass-modal .el-textarea__inner:focus,
+.book-glass-modal .el-select .el-input.is-focus .el-input__wrapper,
+.book-glass-modal .el-select__wrapper.is-focused {
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 1px var(--el-color-primary) inset, 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  border-color: transparent !important;
+}
